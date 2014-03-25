@@ -38,14 +38,14 @@
 
 @implementation UITableView (DETableViewCell)
 
--(void)registerDEClass:(Class)cellClass {
+-(void)registerDETableViewCellClass:(Class)cellClass {
     if ([cellClass isSubclassOfClass:[DETableViewCell class]]) {
         [self registerNib: [cellClass cellNib]
    forCellReuseIdentifier: [cellClass reuseIdentifier]];
     }
 }
 
--(void)unregisterDEClass:(Class)cellClass {
+-(void)unregisterDETableViewCellClass:(Class)cellClass {
     if ([cellClass isSubclassOfClass:[DETableViewCell class]]) {
         [self registerNib: nil
    forCellReuseIdentifier: [cellClass reuseIdentifier]];

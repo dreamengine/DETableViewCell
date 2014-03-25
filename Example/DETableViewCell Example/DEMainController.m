@@ -30,8 +30,8 @@
     NSLog(@"First cell: %@", DEFirstCell.cellNib);
     NSLog(@"Second cell: %@", DESecondCell.cellNib);
     
-    [self.tableView registerDEClass:DEFirstCell.class];
-    [self.tableView registerDEClass:DESecondCell.class];
+    [self.tableView registerDETableViewCellClass:DEFirstCell.class];
+    [self.tableView registerDETableViewCellClass:DESecondCell.class];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

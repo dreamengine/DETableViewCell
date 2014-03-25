@@ -17,14 +17,14 @@
  Class must be a subclass of DETableViewCell.
  
  */
--(void)registerDEClass:(Class)cellClass;
+-(void)registerDETableViewCellClass:(Class)cellClass;
 
 /*
  
  Class must be a subclass of DETableViewCell.
  
  */
--(void)unregisterDEClass:(Class)cellClass;
+-(void)unregisterDETableViewCellClass:(Class)cellClass;
 
 @end
 
