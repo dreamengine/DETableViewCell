@@ -7,6 +7,7 @@
 
 ## How It Works
 
+
 ### DETableViewCell Subclassing
 
 When creating custom cells, subclass from `DETableViewCell` instead of `UITableViewCell`. `DETableViewCell` is itself a subclass of `UITableViewCell`, so nothing is lost by changing your custom cell's superclass.
@@ -93,9 +94,11 @@ A `UITableView` category has also been provided to simplify reuse registration. 
 
 ### Manual Memory Management
 
-If a cell class will never be used again, it may be prudent manually remove the cached `UINib` from memory before memory warnings occur. To do so, call `+removeCellNibFromCache` on the corresponding class.
+`DETableViewCell` uses a custom NSCache object that is also sensitive to low memory warnings. The cache will automatically evict items as memory constraints increase, which means you don't have to worry about `DETableViewCell's` caching strategies.
 
-It may also make sense to clear the `UINib` cache entirely. To do so, call `+removeAllCellNibsFromCache` on any DETableViewCell class.
+However, it may still be prudent manually remove the cached `UINib` from memory before memory warnings occur. To do so, call `+removeCellNibFromCache` on the corresponding class.
+
+There may also be situations where it makes sense to clear the `UINib` cache entirely. To do so, call `+removeAllCellNibsFromCache` on any `DETableViewCell` class.
 
 #### Example
 
