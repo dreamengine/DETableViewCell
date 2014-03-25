@@ -96,7 +96,7 @@ A `UITableView` category has also been provided to simplify reuse registration. 
 
 `DETableViewCell` uses a custom NSCache object that is also sensitive to low memory warnings. The cache will automatically evict items as memory constraints increase, which means you don't have to worry about `DETableViewCell's` caching strategies.
 
-However, it may still be prudent manually remove the cached `UINib` from memory before memory warnings occur. To do so, call `+removeCellNibFromCache` on the corresponding class.
+However, it may still be prudent manually remove a cached `UINib` from memory before memory warnings occur. To do so, call `+removeCellNibFromCache` on the corresponding class.
 
 There may also be situations where it makes sense to clear the `UINib` cache entirely. To do so, call `+removeAllCellNibsFromCache` on any `DETableViewCell` class.
 
