@@ -92,7 +92,7 @@ A `UITableView` category has also been provided to simplify reuse registration. 
 		[self.tableView registerDETableViewCellClass:OtherCustomCell.class];
 	}
 
-### Manual Memory Management
+### Manual Cache Management
 
 `DETableViewCell` uses a custom NSCache object that is also sensitive to low memory warnings. The cache will automatically evict items as memory constraints increase, which means you don't have to worry about `DETableViewCell's` caching strategies.
 
