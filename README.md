@@ -24,7 +24,7 @@ When creating custom cells, subclass from `DETableViewCell` instead of `UITableV
 
 ### Accessing UINibs
 
-To access a cell class's `UINib`, simply use `+cellNib` on that class. If a UINib instance has already been created for that class, this method will simply return that object. Otherwise, this method will automatically create a new `UINib` for the class, store it in the `DETableViewCell` cache, and return that object.
+To access a cell class's `UINib`, simply use `+cellNib` on that class. If a UINib instance has already been created for that class, this method will simply return that object. Otherwise, this method will automatically create a new `UINib` for the class, store it in the `DETableViewCell` cache, and return that object. The nib instantiation process requires that the .xib/.nib file has the same name as the `DETableViewCell` subclass.
 
 #### Example
 
