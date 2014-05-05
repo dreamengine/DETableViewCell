@@ -6,35 +6,7 @@
 //
 
 #import "DETableViewCell.h"
-
-
-@interface DETableViewCellCache : NSCache
-@end
-
-@implementation DETableViewCellCache
-
-// from: http://stackoverflow.com/a/19549090/708798
--(id)init {
-    if (self=[super init]) {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver: self
-               selector: @selector(removeAllObjects)
-                   name: UIApplicationDidReceiveMemoryWarningNotification
-                 object: nil];
-    }
-
-    return self;
-}
-
--(void)dealloc {
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc removeObserver: self
-                  name: UIApplicationDidReceiveMemoryWarningNotification
-                object: nil];
-}
-
-@end
-
+#import "OSCache.h"
 
 @implementation UITableView (DETableViewCell)
 
@@ -57,15 +29,15 @@
 
 @implementation DETableViewCell
 
-static DETableViewCellCache *CellNibCache = nil;
+static OSCache *CellNibCache = nil;
 
 
 #pragma mark - Cell Nib Cache
 
-+(DETableViewCellCache *)CellNibCache {
++(OSCache *)CellNibCache {
     @synchronized(self) {
         if (!CellNibCache) {
-            CellNibCache = [DETableViewCellCache new];
+            CellNibCache = [OSCache new];
         }
     }
 
@@ -79,7 +51,7 @@ static DETableViewCellCache *CellNibCache = nil;
     UINib *cellNib = nil;
 
     @synchronized(self) {
-        DETableViewCellCache *cellNibCache = self.class.CellNibCache;
+        OSCache *cellNibCache = self.class.CellNibCache;
 
         cellNib = [cellNibCache objectForKey:self];
 
@@ -105,14 +77,14 @@ static DETableViewCellCache *CellNibCache = nil;
 
 +(void)removeCellNibFromCache {
     @synchronized(self) {
-        DETableViewCellCache *cellNibCache = self.CellNibCache;
+        OSCache *cellNibCache = self.CellNibCache;
         [cellNibCache removeObjectForKey:self];
     };
 }
 
 +(void)removeAllCellNibsFromCache {
     @synchronized(self) {
-        DETableViewCellCache *cellNibCache = self.CellNibCache;
+        OSCache *cellNibCache = self.CellNibCache;
         [cellNibCache removeAllObjects];
     }
 }

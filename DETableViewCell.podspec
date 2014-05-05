@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'DETableViewCell'
-  s.version      = '0.0.1'
+  s.version      = '0.0.2'
 
   s.homepage     = 'https://github.com/dreamengine/DETableViewCell'
   s.author       = { 'Dream Engine Interactive, Inc.' => 'contact@dreamengine.com' }
@@ -14,6 +14,8 @@ Pod::Spec.new do |s|
   s.frameworks   = ['Foundation', 'UIKit']
   s.source       = { :git => 'https://github.com/dreamengine/DETableViewCell.git', :tag => s.version.to_s }
   s.source_files = 'src/*.{h,m}'
+
+  s.dependency 'OSCache' 
 
   s.license      = {
     :type => 'MIT',
