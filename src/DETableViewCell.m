@@ -8,39 +8,6 @@
 #import "DETableViewCell.h"
 #import "OSCache.h"
 
-
-
-/*
-
-@interface DETableViewCellCache : NSCache
-@end
-
-@implementation DETableViewCellCache
-
-// from: http://stackoverflow.com/a/19549090/708798
--(id)init {
-    if (self=[super init]) {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver: self
-               selector: @selector(removeAllObjects)
-                   name: UIApplicationDidReceiveMemoryWarningNotification
-                 object: nil];
-    }
-
-    return self;
-}
-
--(void)dealloc {
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc removeObserver: self
-                  name: UIApplicationDidReceiveMemoryWarningNotification
-                object: nil];
-}
-
-@end
-*/
-
-
 @implementation UITableView (DETableViewCell)
 
 -(void)registerDETableViewCellClass:(Class)cellClass {
