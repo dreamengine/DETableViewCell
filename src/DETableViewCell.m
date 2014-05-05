@@ -6,7 +6,11 @@
 //
 
 #import "DETableViewCell.h"
+#import "OSCache.h"
 
+
+
+/*
 
 @interface DETableViewCellCache : NSCache
 @end
@@ -34,6 +38,7 @@
 }
 
 @end
+*/
 
 
 @implementation UITableView (DETableViewCell)
@@ -57,15 +62,15 @@
 
 @implementation DETableViewCell
 
-static DETableViewCellCache *CellNibCache = nil;
+static OSCache *CellNibCache = nil;
 
 
 #pragma mark - Cell Nib Cache
 
-+(DETableViewCellCache *)CellNibCache {
++(OSCache *)CellNibCache {
     @synchronized(self) {
         if (!CellNibCache) {
-            CellNibCache = [DETableViewCellCache new];
+            CellNibCache = [OSCache new];
         }
     }
 
@@ -79,7 +84,7 @@ static DETableViewCellCache *CellNibCache = nil;
     UINib *cellNib = nil;
 
     @synchronized(self) {
-        DETableViewCellCache *cellNibCache = self.class.CellNibCache;
+        OSCache *cellNibCache = self.class.CellNibCache;
 
         cellNib = [cellNibCache objectForKey:self];
 
@@ -105,14 +110,14 @@ static DETableViewCellCache *CellNibCache = nil;
 
 +(void)removeCellNibFromCache {
     @synchronized(self) {
-        DETableViewCellCache *cellNibCache = self.CellNibCache;
+        OSCache *cellNibCache = self.CellNibCache;
         [cellNibCache removeObjectForKey:self];
     };
 }
 
 +(void)removeAllCellNibsFromCache {
     @synchronized(self) {
-        DETableViewCellCache *cellNibCache = self.CellNibCache;
+        OSCache *cellNibCache = self.CellNibCache;
         [cellNibCache removeAllObjects];
     }
 }

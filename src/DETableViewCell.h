@@ -8,8 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
-
 @class DETableViewCell;
 @interface UITableView (DETableViewCell)
 
