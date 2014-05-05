@@ -26,6 +26,7 @@
 		3F9756D818E12D740046C09B /* DESecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9756D718E12D740046C09B /* DESecondCell.xib */; };
 		3F9756DA18E12D970046C09B /* DEMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9756D918E12D970046C09B /* DEMainController.xib */; };
 		3F9756DD18E1DF890046C09B /* DETableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9756DC18E1DF890046C09B /* DETableViewCell.m */; };
+		B315556D1917FD8400FD3DE4 /* OSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B315556C1917FD8400FD3DE4 /* OSCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		3F9756D918E12D970046C09B /* DEMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEMainController.xib; sourceTree = "<group>"; };
 		3F9756DB18E1DF890046C09B /* DETableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DETableViewCell.h; path = ../../src/DETableViewCell.h; sourceTree = "<group>"; };
 		3F9756DC18E1DF890046C09B /* DETableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DETableViewCell.m; path = ../../src/DETableViewCell.m; sourceTree = "<group>"; };
+		B315556B1917FD4C00FD3DE4 /* OSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCache.h; sourceTree = "<group>"; };
+		B315556C1917FD8400FD3DE4 /* OSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 			children = (
 				3F9756DB18E1DF890046C09B /* DETableViewCell.h */,
 				3F9756DC18E1DF890046C09B /* DETableViewCell.m */,
+				B315556B1917FD4C00FD3DE4 /* OSCache.h */,
+				B315556C1917FD8400FD3DE4 /* OSCache.m */,
 			);
 			name = DETableViewCell;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 			files = (
 				3F9756A318E122FD0046C09B /* main.m in Sources */,
 				3F9756A718E122FD0046C09B /* DEAppDelegate.m in Sources */,
+				B315556D1917FD8400FD3DE4 /* OSCache.m in Sources */,
 				3F9756D218E12D260046C09B /* DESecondCell.m in Sources */,
 				3F9756DD18E1DF890046C09B /* DETableViewCell.m in Sources */,
 				3F9756CF18E12D120046C09B /* DEFirstCell.m in Sources */,
